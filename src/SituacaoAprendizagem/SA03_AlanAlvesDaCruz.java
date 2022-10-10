@@ -9,8 +9,9 @@ public class SA03_AlanAlvesDaCruz {
 
         //Lista para armazenar os nomes
         List<String> lista = new ArrayList<>();
+        List<Integer> listaIdade = new ArrayList<>();
         String nome, opcao;
-        int idade;
+        int idade, controlador;
 
         //Inicio do laço de repetição
         do {
@@ -24,17 +25,36 @@ public class SA03_AlanAlvesDaCruz {
 
             //Tratamento das opções
             switch (opcao){
+
+                //Cadastro Usuário
                 case "1":
-                    nome = JOptionPane.showInputDialog("Informe o nome do Usuário:");
-                    idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a Idade do Usuário:"));
-                    lista.add(nome);
+
+                    controlador = Integer.parseInt(JOptionPane.showInputDialog("Quantos usuários deseja Cadastrar?"));
+
+                    for (int i =0; i < controlador; i++) {
+                        nome = JOptionPane.showInputDialog("Informe o nome do Usuário:");
+                        idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a Idade do Usuário:"));
+                        lista.add(nome);
+                        listaIdade.add(idade);
+                    }
                     break;
 
+                //Listar Usuários
                 case "2":
-                    //Imprime os nomes e informa ao usuário
-                    JOptionPane.showMessageDialog(null, lista);
+
+                    System.out.println("------- Lista Usuários -------");
+                    for (int i = 0; i < lista.size(); i++){
+                        System.out.printf("%s --- %d Anos\n", lista.get(i), listaIdade.get(i));
+                    }
+                    System.out.print("------------------------------");
+
+                    //Criar espaço entre as exibições da lista
+                    System.out.println();
+                    System.out.println();
+
                     break;
 
+                //Encerrar Programa
                 case "3":
                     JOptionPane.showMessageDialog(null, "------ Programa Encerrado ------");
                     break;
