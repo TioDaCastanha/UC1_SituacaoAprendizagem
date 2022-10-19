@@ -20,7 +20,8 @@ public class SA03_AlanAlvesDaCruz {
                 "\nSelecione uma das opções a seguir:" +
                 "\n1 - Cadastrar Novo Usuário" +
                 "\n2 - Lista de Usuários Cadastrados" +
-                "\n3 - Sair." +
+                "\n3 - Buscar Usuário Cadastrado." +
+                "\n4 - Sair." +
                 "\n-------------------------------------------\n");
 
             //Tratamento das opções
@@ -54,18 +55,35 @@ public class SA03_AlanAlvesDaCruz {
 
                     break;
 
-                //Encerrar Programa
                 case "3":
+
+                    JOptionPane.showMessageDialog(null, buscar(lista));
+
+                    break;
+
+                //Encerrar Programa
+                case "4":
                     JOptionPane.showMessageDialog(null, "------ Programa Encerrado ------");
                     break;
 
                 default:
                     JOptionPane.showMessageDialog(null, "Opção Inválida!! Por favor Selecione uma das Opções!!");
             }
+
           //Laço finaliza ao se digitar a opção 3
-        } while (!opcao.equals("3"));
+        } while (!opcao.equals("4"));
     }
 
+
+    public static String buscar(List<String> list){
+        String nome = JOptionPane.showInputDialog("informe o nome que deseja buscar");
+
+        if(list.contains(nome)){
+            return list.get(list.indexOf(nome))+ " Encontrado na posição " + list.indexOf(nome)+ " da Lista." ;
+        }else {
+            return "Nome Não Encontrado!!";
+        }
+    }
 
 }
 
