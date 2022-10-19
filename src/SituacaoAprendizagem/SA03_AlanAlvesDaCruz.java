@@ -74,7 +74,7 @@ public class SA03_AlanAlvesDaCruz {
         } while (!opcao.equals("4"));
     }
 
-
+    //Função buscar nome
     public static String buscar(List<String> list){
         String nome = JOptionPane.showInputDialog("informe o nome que deseja buscar");
 
