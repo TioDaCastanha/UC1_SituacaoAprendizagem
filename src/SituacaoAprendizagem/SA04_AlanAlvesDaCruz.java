@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public class SA03_AlanAlvesDaCruz {
+public class SA04_AlanAlvesDaCruz {
     public static void main(String[] args){
 
         //Lista para armazenar os nomes
@@ -33,7 +33,7 @@ public class SA03_AlanAlvesDaCruz {
                     controlador = Integer.parseInt(JOptionPane.showInputDialog("Quantos usuários deseja Cadastrar?"));
 
                     for (int i =0; i < controlador; i++) {
-                        nome = JOptionPane.showInputDialog("Informe o nome do Usuário:");
+                        nome = JOptionPane.showInputDialog("Informe o nome do Usuário:").toUpperCase();
                         idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a Idade do Usuário:"));
                         lista.add(nome);
                         listaIdade.add(idade);
@@ -57,7 +57,7 @@ public class SA03_AlanAlvesDaCruz {
 
                 case "3":
 
-                    JOptionPane.showMessageDialog(null, buscar(lista));
+                    System.out.println(buscar(lista));
 
                     break;
 
@@ -74,15 +74,34 @@ public class SA03_AlanAlvesDaCruz {
         } while (!opcao.equals("4"));
     }
 
+
+    //FUNÇÕES PARA A SA04 - ETAPAS 1 e 2
+
+
     //Função buscar nome
     public static String buscar(List<String> list){
-        String nome = JOptionPane.showInputDialog("informe o nome que deseja buscar");
+        String nome = JOptionPane.showInputDialog("informe o nome que deseja buscar").toUpperCase();
+        String concat = "";
 
-        if(list.contains(nome)){
-            return list.get(list.indexOf(nome))+ " Encontrado na posição " + list.indexOf(nome)+ " da Lista." ;
-        }else {
-            return "Nome Não Encontrado!!";
+        //Verifica se a lista contem o nome informado
+        if (list.contains(nome)) {
+
+            //Loop para percorrer lista
+            for (int i = 0; i < list.size(); i++) {
+
+                //Encontrado nome vai adicionar ao concatenador
+                if (list.get(i).equalsIgnoreCase(nome)) {
+                    concat += list.get(i) + " Encontrado na posição " + i + " da Lista.\n";
+                }
+            }
+
+          //Se não encontrar retorna que nome não foi encontrado
+        } else {
+            concat += "Nome" + nome + " Não Encontrado/Cadastrado!!\n";
         }
+
+        //Retorno do concatenador
+        return concat + "---- Busca Encerrada ----";
     }
 
 }
