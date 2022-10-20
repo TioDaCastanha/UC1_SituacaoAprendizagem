@@ -50,14 +50,16 @@ public class SA04_AlanAlvesDaCruz {
                     System.out.print("------------------------------");
 
                     //Criar espaço entre as exibições da lista
-                    System.out.println();
-                    System.out.println();
+                    pulaLinha();
 
                     break;
 
+                //Buscar Usuários
                 case "3":
 
+                    System.out.println("------ Buscar Usuários ------");
                     System.out.println(buscar(lista));
+                    pulaLinha();
 
                     break;
 
@@ -84,24 +86,32 @@ public class SA04_AlanAlvesDaCruz {
         String concat = "";
 
         //Verifica se a lista contem o nome informado
-        if (list.contains(nome)) {
-
             //Loop para percorrer lista
             for (int i = 0; i < list.size(); i++) {
-
                 //Encontrado nome vai adicionar ao concatenador
-                if (list.get(i).equalsIgnoreCase(nome)) {
+                if (list.get(i).contains(nome)) {
                     concat += list.get(i) + " Encontrado na posição " + i + " da Lista.\n";
                 }
             }
 
-          //Se não encontrar retorna que nome não foi encontrado
+        //Verifica se o concatenador está vazio
+        if(concat.isBlank()){
+            //Se estiver vazio retorna que nome não foi encontrado
+            concat += "Nome " + nome + " Não Encontrado!!\n------ Busca Encerrada ------";
+
+        //Se não estiver adiciona o busca encerrada.
         } else {
-            concat += "Nome" + nome + " Não Encontrado/Cadastrado!!\n";
+            concat += "------ Busca Encerrada ------";
         }
 
         //Retorno do concatenador
-        return concat + "---- Busca Encerrada ----";
+        return concat;
+    }
+
+    //Adiciona espaços no console
+    public static void pulaLinha(){
+        System.out.println();
+        System.out.println();
     }
 
 }
