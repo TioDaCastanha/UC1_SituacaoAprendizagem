@@ -3,7 +3,7 @@ package SituacaoAprendizagem;
 import javax.swing.*;
 import java.util.Stack;
 
-public class SA05_AlanAlvesDaCruz {
+public class SA05_AlanAlvesDaCruz_Pilha {
 
     static Stack<Integer> pilha = new Stack<>();
 
@@ -40,12 +40,12 @@ public class SA05_AlanAlvesDaCruz {
                     }
                     break;
 
-                //Lista elementos da lista
+                //Lista elementos da Pilha
                 case "3":
                     Listar();
                     break;
 
-                //Limpa a Lista
+                //Limpa a Pilha
                 case "4":
                     if(Vazia()){
                         JOptionPane.showMessageDialog(null, "A Pilha ja está Vazia");
@@ -54,10 +54,12 @@ public class SA05_AlanAlvesDaCruz {
                     }
                     break;
 
-                //Verifica se a Lista está Vazia
+                //Verifica se a Pilha está Vazia
                 case "5":
                     if(Vazia()){
                         JOptionPane.showMessageDialog(null, "A Pilha está Vazia");
+                    }else {
+                        JOptionPane.showMessageDialog(null, "A Pilha não está vazia");
                     }
                     break;
 
@@ -89,7 +91,8 @@ public class SA05_AlanAlvesDaCruz {
         for(int i = pilha.size() - 1; i > 0 ; i--){
             System.out.println("| "+ pilha.get(i) +" |");
         }
-        System.out.println("--------");
+        System.out.println("---------");
+        System.out.println("\n");
     }
 
     //Procedimento para Limpar a Pilha
