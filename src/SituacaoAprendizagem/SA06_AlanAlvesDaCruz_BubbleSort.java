@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class SA06_AlanAlvesDaCruz_BubbleSort {
 
-    static List<Integer> lista = new ArrayList<>();
+    static List<Integer> lista;
     static Random random = new Random();
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class SA06_AlanAlvesDaCruz_BubbleSort {
                 //Preenche Lista
                 case "1":
 
-                    preencherLista(random.nextInt(20));
+                    preencherLista(20);
                     break;
 
                 //Exibe Lista
