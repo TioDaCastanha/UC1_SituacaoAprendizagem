@@ -80,8 +80,6 @@ public class Aviao {
             //Estrutura de repetição para manter a persistência do programa até que se escolha a opção 2
             if(opcao.equalsIgnoreCase("1")) {
 
-
-
                 //Cria-se um novo objeto Passagem para adicionar os dados da reserva
                 this.pass = new Passagem();
                 this.pass.setIdPassagem(this.cont);
