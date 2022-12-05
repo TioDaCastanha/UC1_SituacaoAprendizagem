@@ -12,8 +12,6 @@ public class SA07_AlanAlvesDaCruz {
 
     public static void main(String[] args) {
 
-        Passagem pass = new Passagem();
-
         String opcao;
 
         //Estrutura de repetição para manter o programa persistente até que seja escolhida a opção para encerrar
